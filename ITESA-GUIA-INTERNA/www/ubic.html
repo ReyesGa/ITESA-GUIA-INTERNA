@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/ubic.css">
+    <title>GUIA EN INTERIORES ITESA</title>
+</head>
+<h2>Obtener ubicación para iniciar recorrido</h2>
+<body>
+    
+    <div class="portada">
+        <div id="deviceready" class="blink">
+        </div>
+
+
+        <div>
+            <p>Precioba el boton para que logres obtener tu ubicación actual y asi iniciar tu recorrido dentro de cualquier edificio</p>
+        </div> 
+         
+
+    </div>
+    <script>
+        if (navigator.geolocation) {
+
+            navigator.geolocation.getCurrentPosition(succes);
+
+        } else {
+
+            alert("Puedes obtener tu ubicación actual");
+        }
+
+        function succes(geolocationPosition){
+
+            let coords = geolocationPosition.coords;
+
+            document.getElementById("p").innerHTML =  "Latitud:" + coords.latitude + "<br>" + "<br>" + "longitud:" + coords.latitude;
+        }
+       
+    </script>
+    
+    </div>
+
+    <div id="p"> </div>
+
+    <div><h4><button link="ubic.html">Ubicación</button></h4></div>
+        
+    
+</body>
+
+</html>
